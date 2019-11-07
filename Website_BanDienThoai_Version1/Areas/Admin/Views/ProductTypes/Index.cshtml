@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Website_BanDienThoai_Version1.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+
+}
+<br />
+<br />
+
+<div class="row">
+    <div class="col-6">
+        <h1 class="text-info"> Product List</h1>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-info">New Product</a>
+    </div>
+</div>
+<br />
+<div>
+    <table class="table table-striped boder">
+        <tr class="table-info">
+            <th>
+                @Html.DisplayNameFor(m => m.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Picture)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(m => m.Memory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Price)
+            </th>
+            <th>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.ProductName);
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Picture);
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Memory);
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Capacity);
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Manufacturer);
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Color);
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Price);
+                </td>
+                
+                <td>EDIIT|DELETE|UPDATE</td>
+            </tr>
+
+        }
+    </table>
+</div>
